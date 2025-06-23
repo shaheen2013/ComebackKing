@@ -1,14 +1,14 @@
-import {FC, useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import { FC, useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import DiplomatIcon from '../../../assets/svg/DiplomatIcon';
-import {cn} from '../../common/cn';
+import { cn } from '../../common/cn';
 import SocialIcon from 'react-native-vector-icons/FontAwesome';
-import {DrawerActions, useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {RootStackParamList} from '../../types/navigationType';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { RootStackParamList } from '../../types/navigationType';
 import Entypo from 'react-native-vector-icons/Entypo';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-import {socialMediaData, SocialMediaItem} from '../../types/socialMedia';
+import { socialMediaData, SocialMediaItem } from '../../types/socialMedia';
 import SocialAccountsModal from '../modals/SocialAccountsModal';
 
 interface HomeHeaderProps {
@@ -35,8 +35,9 @@ const HomeHeader: FC<HomeHeaderProps> = ({
           className="p-3 rounded-[10px] bg-lightBlue"
           onPress={() => {
             navigation.dispatch(DrawerActions.openDrawer());
-          }}>
-          <SimpleLineIcons name={'menu'} size={22} className="text-textColor" />
+          }}
+        >
+          <SimpleLineIcons name={'menu'} size={22} className="text-textColor" color={""} />
         </TouchableOpacity>
         <View className="flex-1 flex-row gap-x-2 rounded-lg">
           <TouchableOpacity
@@ -46,7 +47,8 @@ const HomeHeader: FC<HomeHeaderProps> = ({
             )}
             onPress={() => {
               setActiveTab('diplomat');
-            }}>
+            }}
+          >
             <DiplomatIcon
               width={17}
               height={17}
@@ -56,7 +58,8 @@ const HomeHeader: FC<HomeHeaderProps> = ({
               className={cn(
                 'font-normal text-[15px] font-SF text-textColor',
                 activeTab === 'diplomat' ? 'text-white' : 'text-textColor',
-              )}>
+              )}
+            >
               Comeback King
             </Text>
           </TouchableOpacity>
@@ -68,7 +71,8 @@ const HomeHeader: FC<HomeHeaderProps> = ({
             onPress={() => {
               setActiveTab('social');
               // setWebViewVisible(true)
-            }}>
+            }}
+          >
             <SocialIcon
               name={selectedSocial.icon}
               size={16}
@@ -78,14 +82,16 @@ const HomeHeader: FC<HomeHeaderProps> = ({
               className={cn(
                 'text-textColor font-normal text-[15px] font-SF',
                 activeTab === 'social' ? 'text-white' : 'text-textColor',
-              )}>
+              )}
+            >
               {selectedSocial?.name}
             </Text>
             <TouchableOpacity
               onPress={() => {
                 setSocialAccountListModal(true);
               }}
-              className="py-2">
+              className="py-2"
+            >
               <Entypo
                 name="chevron-thin-down"
                 size={20}

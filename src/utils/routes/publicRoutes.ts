@@ -1,13 +1,13 @@
 // import DrawerStack from '../../navigations/DrawerStack';
+import DrawerStack from '../../navigations/DrawerStack';
 import ForgetPasswordScreen from '../../screens/auth/ForgetPasswordScreen';
 import LoginScreen from '../../screens/auth/LoginScreen';
 import OTPScreen from '../../screens/auth/OTPScreen';
 import RegisterScreen from '../../screens/auth/RegisterScreen';
 import ResetPasswordScreen from '../../screens/auth/ResetPasswordScreen';
 import ResetSuccessfulScreen from '../../screens/auth/ResetSuccessfulScreen';
-import HomeScreen from '../../screens/main/HomeScreen';
 import OnboardingScreen from '../../screens/onboarding/OnboardingScreen';
-import {RootStackParamList, RouteType} from '../../types/navigationType';
+import { RootStackParamList, RouteType } from '../../types/navigationType';
 
 export const publicRoutes: RouteType<keyof RootStackParamList>[] = [
   {
@@ -35,8 +35,8 @@ export const publicRoutes: RouteType<keyof RootStackParamList>[] = [
     component: ResetSuccessfulScreen,
   },
   {
-    name: 'Home',
-    component: HomeScreen,
+    name: 'Drawer',
+    component: DrawerStack,
   },
   {
     name: 'Onboarding',
